@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             result= stmt.executeUpdate(sql);
              
         }catch(SQLException e){
-           out.println("°õ¦æSQL\""+sql+"\"®Éµo¥Í¨Ò¥~:"+e.getMessage());
+           out.println("åŸ·è¡ŒSQL\""+sql+"\"æ™‚ç™¼ç”Ÿä¾‹å¤–:"+e.getMessage());
            return;
         }finally{
            if(stmt !=null)
@@ -59,9 +59,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         }
         
         out.println("<html><style body{font-size:12px;}></style><body>");
-        out.println(result+"±ø°O¿ı¼W¥[¨ì¸ê®Æ®w¤¤¡C");
-        out.println("<a href='showPerson.jsp'>¶Ç¦^¤H­û¦Cªí</a>");
-        out.println("<br><br>°õ¦æªºSQL±Ô­z¬°:</>"+sql);
+        out.println(result+"æ¢è¨˜éŒ„å¢åŠ åˆ°è³‡æ–™åº«ä¸­ã€‚");
+        out.println("<a href='success.jsp'>å‚³å›äººå“¡åˆ—è¡¨</a>");
+        out.println("<br><br>åŸ·è¡Œçš„SQLæ•˜è¿°ç‚º:</>"+sql);
         
         return;
         
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        String[] id =request.getParameterValues("id");
        
        if(id==null && id.length == 0){
-           out.println("¨S¦³¤Ä¿ï¥ô¦ó¿ï¶µ");
+           out.println("æ²’æœ‰å‹¾é¸ä»»ä½•é¸é …");
            return;
        }
        String condition ="";
@@ -93,11 +93,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           int result= stmt.executeUpdate(sql);
           
           out.println("<html><style body{font-size:12px;}></style><body>");
-          out.println(result+"±ø°O¿ı³Q§R°£¡C");
-          out.println("<a href='showPerson.jsp'>¶Ç¦^¤H­û¦Cªí</a>");
-          out.println("<br><br>°õ¦æªºSQL±Ô­z¬°:</>"+sql);
+          out.println(result+"æ¢è¨˜éŒ„è¢«åˆªé™¤ã€‚");
+          out.println("<a href='success.jsp'>å‚³å›äººå“¡åˆ—è¡¨</a>");
+          out.println("<br><br>åŸ·è¡Œçš„SQLæ•˜è¿°ç‚º:</>"+sql);
        }catch(SQLException e){
-          out.println("°õ¦æSQL\"" +sql+"\"®Éµo¥Í¨Ò¥~:"+e.getMessage());
+          out.println("åŸ·è¡ŒSQL\"" +sql+"\"æ™‚ç™¼ç”Ÿä¾‹å¤–:"+e.getMessage());
           e.printStackTrace();
        }finally{
           if(stmt !=null)
@@ -134,10 +134,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                
                request.getRequestDispatcher("/addPerson.jsp").forward(request, response);
            }else{
-               out.println("¨S¦³§ä¨ìID¬°" + id +"ªº¬ö¿ı¡C");
+               out.println("æ²’æœ‰æ‰¾åˆ°IDç‚º" + id +"çš„ç´€éŒ„ã€‚");
            }
         }catch(SQLException e){
-          out.println("°õ¦æSQL\"" +sql+"\"®Éµo¥Í¨Ò¥~:"+e.getMessage());
+          out.println("åŸ·è¡ŒSQL\"" +sql+"\"æ™‚ç™¼ç”Ÿä¾‹å¤–:"+e.getMessage());
           e.printStackTrace();
         }finally{
           if(stmt !=null)
@@ -170,14 +170,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             int result=stmt.executeUpdate(sql);
             
             out.println("<html><style body{font-size:12px;}></style><body>");
-            if(result ==0)  out.println("¼vÅT¼Æ¥Ø¬° 0,­×§ï¥¢±Ñ.");
-            else            out.println(result+"±ø°O¿ı³Q­×§ï¡C");
-            out.println("<a href='success.jsp'>¶Ç¦^¤H­û¦Cªí</a>");
-            out.println("<br><br>°õ¦æªºSQL±Ô­z¬°:</>"+sql);
+            if(result ==0)  out.println("å½±éŸ¿æ•¸ç›®ç‚º 0,ä¿®æ”¹å¤±æ•—.");
+            else            out.println(result+"æ¢è¨˜éŒ„è¢«ä¿®æ”¹ã€‚");
+            out.println("<a href='success.jsp'>å‚³å›äººå“¡åˆ—è¡¨</a>");
+            out.println("<br><br>åŸ·è¡Œçš„SQLæ•˜è¿°ç‚º:</>"+sql);
             
             
         }catch(SQLException e){
-            out.println("°õ¦æSQL\"" +sql+"\"®Éµo¥Í¨Ò¥~:"+e.getMessage());
+            out.println("åŸ·è¡ŒSQL\"" +sql+"\"æ™‚ç™¼ç”Ÿä¾‹å¤–:"+e.getMessage());
             e.printStackTrace();
         }finally{
             if(stmt !=null)
